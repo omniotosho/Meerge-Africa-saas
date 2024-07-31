@@ -1,2 +1,7 @@
 Django>=4.2,<5.1
 wagtail>=6.1,<6.2
+django-extensions
+djangorestframework
+django-htmx
+PyJWT
+cryptography
