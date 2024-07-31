@@ -16,7 +16,6 @@ import os
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -24,28 +23,57 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
-    "home",
-    "search",
-    "wagtail.contrib.forms",
-    "wagtail.contrib.redirects",
-    "wagtail.embeds",
-    "wagtail.sites",
-    "wagtail.users",
-    "wagtail.snippets",
-    "wagtail.documents",
-    "wagtail.images",
-    "wagtail.search",
-    "wagtail.admin",
-    "wagtail",
-    "modelcluster",
-    "taggit",
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-]
+                     "home",
+                     "search",
+                     "wagtail.contrib.forms",
+                     "wagtail.contrib.redirects",
+                     "wagtail.embeds",
+                     "wagtail.sites",
+                     "wagtail.users",
+                     "wagtail.snippets",
+                     "wagtail.documents",
+                     "wagtail.images",
+                     "wagtail.search",
+                     "wagtail.admin",
+                     "wagtail",
+                     "modelcluster",
+                     "taggit",
+                     "django.contrib.admin",
+                     "django.contrib.auth",
+                     "django.contrib.contenttypes",
+                     "django.contrib.sessions",
+                     "django.contrib.messages",
+                     "django.contrib.staticfiles",
+                 ] + [
+                     # extensions
+                     "django_extensions",
+                 ] + [
+                     # packages
+                     'rest_framework',
+                     'django_htmx',
+                 ] + [
+                     # core
+                     "core.apps.CoreConfig",
+                 ] + [
+                     # apps
+                 ]
+# Customer User Model
+AUTH_USER_MODEL = 'core.User'
+
+# Django Xtensions
+GRAPH_MODELS = {
+    'app_labels': [
+        "core",
+        # "restaurant",
+        # "world",
+        # "customers",
+        # "inventory",
+        # "orders",
+    ],
+    'group_models': True,
+}
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -80,7 +108,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -90,7 +117,6 @@ DATABASES = {
         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -110,7 +136,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -121,7 +146,6 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -156,10 +180,9 @@ STORAGES = {
     },
 }
 
-
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = "config"
+WAGTAIL_SITE_NAME = "Meerge Africa"
 
 # Search
 # https://docs.wagtail.org/en/stable/topics/search/backends.html
@@ -171,7 +194,7 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = "http://example.com"
+WAGTAILADMIN_BASE_URL = "http://MeergeAfrica.com"
 
 # Allowed file extensions for documents in the document library.
 # This can be omitted to allow all files, but note that this may present a security risk
