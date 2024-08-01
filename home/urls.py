@@ -10,6 +10,6 @@ urlpatterns = [
     # path('customers/', include('customers.urls')),
     # path('world/', include('world.urls')),
     # path('inventory/', include('inventory.urls')),
-    # path('restaurant/', include('restaurant.urls')),
+    # path('restaurants/', include('restaurants.urls')),
     path('htmx/', views.htmx_home, name='htmx'),
 ]

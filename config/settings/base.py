@@ -49,28 +49,29 @@ INSTALLED_APPS = [
                      "django_extensions",
                  ] + [
                      # packages
-                     'rest_framework',
-                     'django_htmx',
+                     "rest_framework",
+                     "django_htmx",
                  ] + [
                      # core
                      "core.apps.CoreConfig",
                  ] + [
                      # apps
+                     "restaurants",
                  ]
 # Customer User Model
-AUTH_USER_MODEL = 'core.User'
+AUTH_USER_MODEL = "core.User"
 
 # Django Xtensions
 GRAPH_MODELS = {
-    'app_labels': [
+    "app_labels": [
         "core",
-        # "restaurant",
+        "restaurants",
         # "world",
         # "customers",
         # "inventory",
         # "orders",
     ],
-    'group_models': True,
+    "group_models": True,
 }
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
@@ -194,7 +195,7 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = "http://MeergeAfrica.com"
+WAGTAILADMIN_BASE_URL = "MeergeAfrica.com"
 
 # Allowed file extensions for documents in the document library.
 # This can be omitted to allow all files, but note that this may present a security risk
