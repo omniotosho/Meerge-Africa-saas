@@ -53,7 +53,7 @@ INSTALLED_APPS = [
                      "core.apps.CoreConfig",
                  ] + [
                      # apps
-                     "restaurants.apps.RestaurantsConfig",
+
                  ]
 # Customer User Model
 AUTH_USER_MODEL = 'core.User'
@@ -192,5 +192,5 @@ WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'tx
 def load_settings(setting):
     try:
         exec(f"from .{setting} import *")
-    except ImportError:
-        pass
+    except ImportError as e:
+        print(f"Could not import {setting}: {e}")
