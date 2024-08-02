@@ -5,3 +5,4 @@ djangorestframework
 django-htmx
 PyJWT
 cryptography
+django-countries
