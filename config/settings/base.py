@@ -44,7 +44,7 @@ INSTALLED_APPS = [
                      "django.contrib.sessions",
                      "django.contrib.messages",
                      "django.contrib.staticfiles",
-                 ]  + [
+                 ] + [
                      # packages
                      'rest_framework',
                      'django_htmx',
@@ -53,6 +53,7 @@ INSTALLED_APPS = [
                      "core.apps.CoreConfig",
                  ] + [
                      # apps
+
                  ]
 # Customer User Model
 AUTH_USER_MODEL = 'core.User'
@@ -191,5 +192,5 @@ WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'tx
 def load_settings(setting):
     try:
         exec(f"from .{setting} import *")
-    except ImportError:
-        pass
+    except ImportError as e:
+        print(f"Could not import {setting}: {e}")

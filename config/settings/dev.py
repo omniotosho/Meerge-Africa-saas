@@ -12,6 +12,6 @@ ALLOWED_HOSTS = ["*"]
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
-load_settings("restaurants")
 load_settings("geo")
+load_settings("restaurants")
 load_settings("djext")
