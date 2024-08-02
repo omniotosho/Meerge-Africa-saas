@@ -44,10 +44,7 @@ INSTALLED_APPS = [
                      "django.contrib.sessions",
                      "django.contrib.messages",
                      "django.contrib.staticfiles",
-                 ] + [
-                     # extensions
-                     "django_extensions",
-                 ] + [
+                 ]  + [
                      # packages
                      'rest_framework',
                      'django_htmx',
@@ -60,18 +57,6 @@ INSTALLED_APPS = [
 # Customer User Model
 AUTH_USER_MODEL = 'core.User'
 
-# Django Xtensions
-GRAPH_MODELS = {
-    'app_labels': [
-        "core",
-        # "restaurant",
-        # "world",
-        # "customers",
-        # "inventory",
-        # "orders",
-    ],
-    'group_models': True,
-}
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
@@ -201,3 +186,10 @@ WAGTAILADMIN_BASE_URL = "http://MeergeAfrica.com"
 # if untrusted users are allowed to upload files -
 # see https://docs.wagtail.org/en/stable/advanced_topics/deploying.html#user-uploaded-files
 WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'txt', 'xlsx', 'zip']
+
+
+def load_settings(setting):
+    try:
+        exec(f"from .{setting} import *")
+    except ImportError:
+        pass
