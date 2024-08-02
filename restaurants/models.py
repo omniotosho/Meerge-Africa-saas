@@ -1,3 +1,4 @@
+from cities_light.models import City, Country
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
@@ -98,8 +99,8 @@ class MenuItem(models.Model):
 class Restaurant(models.Model):
 
     # Relationships
-    city = models.ForeignKey('cities_light.City', on_delete=models.SET_NULL, null=True, blank=True)
-    country = models.ForeignKey('cities_light.Country', on_delete=models.SET_NULL, null=True, blank=True)
+    city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True, blank=True)
+    country = models.ForeignKey(Country, on_delete=models.SET_NULL, null=True, blank=True)
     owner = models.ManyToManyField("core.User")
 
     # Fields
