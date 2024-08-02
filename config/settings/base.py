@@ -44,35 +44,19 @@ INSTALLED_APPS = [
                      "django.contrib.sessions",
                      "django.contrib.messages",
                      "django.contrib.staticfiles",
-                 ] + [
-                     # extensions
-                     "django_extensions",
-                 ] + [
+                 ]  + [
                      # packages
-                     "rest_framework",
-                     "django_htmx",
+                     'rest_framework',
+                     'django_htmx',
                  ] + [
                      # core
                      "core.apps.CoreConfig",
                  ] + [
                      # apps
-                     "restaurants",
                  ]
 # Customer User Model
-AUTH_USER_MODEL = "core.User"
+AUTH_USER_MODEL = 'core.User'
 
-# Django Xtensions
-GRAPH_MODELS = {
-    "app_labels": [
-        "core",
-        "restaurants",
-        # "world",
-        # "customers",
-        # "inventory",
-        # "orders",
-    ],
-    "group_models": True,
-}
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
@@ -195,10 +179,17 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = "MeergeAfrica.com"
+WAGTAILADMIN_BASE_URL = "http://MeergeAfrica.com"
 
 # Allowed file extensions for documents in the document library.
 # This can be omitted to allow all files, but note that this may present a security risk
 # if untrusted users are allowed to upload files -
 # see https://docs.wagtail.org/en/stable/advanced_topics/deploying.html#user-uploaded-files
 WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'txt', 'xlsx', 'zip']
+
+
+def load_settings(setting):
+    try:
+        exec(f"from .{setting} import *")
+    except ImportError:
+        pass
