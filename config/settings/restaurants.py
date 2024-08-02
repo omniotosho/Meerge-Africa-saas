@@ -1,5 +1,3 @@
 from base import *
 
-INSTALLED_APPS += [
-    "restaurants.apps.RestaurantsConfig",
-]
+INSTALLED_APPS += []

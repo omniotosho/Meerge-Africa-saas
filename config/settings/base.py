@@ -53,6 +53,7 @@ INSTALLED_APPS = [
                      "core.apps.CoreConfig",
                  ] + [
                      # apps
+                     "restaurants.apps.RestaurantsConfig",
                  ]
 # Customer User Model
 AUTH_USER_MODEL = 'core.User'
