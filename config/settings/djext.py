@@ -8,9 +8,9 @@ INSTALLED_APPS += [
 GRAPH_MODELS = {
     'app_labels': [
         "core",
-        # "restaurant",
-        # "world",
-        # "customers",
+        "cities_light",
+        "restaurant",
+        "geo",
         # "inventory",
         # "orders",
     ],
