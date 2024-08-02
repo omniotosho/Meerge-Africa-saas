@@ -54,6 +54,7 @@ class RestaurantForm(forms.ModelForm):
             "address",
             "name",
             # "city",
+            # "country",
             "owner",
         ]
 

@@ -98,7 +98,8 @@ class MenuItem(models.Model):
 class Restaurant(models.Model):
 
     # Relationships
-    # city = models.ForeignKey("world.City", on_delete=models.CASCADE)
+    city = models.ForeignKey('cities_light.City', on_delete=models.SET_NULL, null=True, blank=True)
+    country = models.ForeignKey('cities_light.Country', on_delete=models.SET_NULL, null=True, blank=True)
     owner = models.ManyToManyField("core.User")
 
     # Fields
