@@ -53,7 +53,8 @@ class RestaurantForm(forms.ModelForm):
         fields = [
             "address",
             "name",
-            # "city",
+            "city",
+            "country",
             "owner",
         ]
 

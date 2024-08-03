@@ -44,19 +44,19 @@ INSTALLED_APPS = [
                      "django.contrib.sessions",
                      "django.contrib.messages",
                      "django.contrib.staticfiles",
-                 ]  + [
+                 ] + [
                      # packages
-                     "rest_framework",
-                     "django_htmx",
+                     'rest_framework',
+                     'django_htmx',
                  ] + [
                      # core
                      "core.apps.CoreConfig",
                  ] + [
                      # apps
-                     "restaurants",
+
                  ]
 # Customer User Model
-AUTH_USER_MODEL = "core.User"
+AUTH_USER_MODEL = 'core.User'
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
@@ -180,7 +180,7 @@ WAGTAILSEARCH_BACKENDS = {
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-WAGTAILADMIN_BASE_URL = "MeergeAfrica.com"
+WAGTAILADMIN_BASE_URL = "http://MeergeAfrica.com"
 
 # Allowed file extensions for documents in the document library.
 # This can be omitted to allow all files, but note that this may present a security risk
@@ -192,5 +192,5 @@ WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'tx
 def load_settings(setting):
     try:
         exec(f"from .{setting} import *")
-    except ImportError:
-        pass
+    except ImportError as e:
+        print(f"Could not import {setting}: {e}")
