@@ -19,5 +19,5 @@ urlpatterns = (
 
     path("core/htmx/User/", htmx.HTMXUserListView.as_view(), name="core_User_htmx_list"),
     path("core/htmx/User/create/", htmx.HTMXUserCreateView.as_view(), name="core_User_htmx_create"),
-    path("core/htmx/User/delete/<int:pk>/", htmx.HTMXUserDeleteView.as_view(), name="core_User_htmx_delete"),
+    path("core/htmx/User/delete/<str:pk>/", htmx.HTMXUserDeleteView.as_view(), name="core_User_htmx_delete"),
 )
