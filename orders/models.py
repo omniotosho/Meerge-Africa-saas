@@ -1,12 +1,14 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
+User = get_user_model()
 
 
 class DeliveryAgent(User):
 
     # Fields
-    created = models.DateTimeField(auto_now_add=True, editable=False)
-    last_updated = models.DateTimeField(auto_now=True, editable=False)
+    # created = models.DateTimeField(auto_now_add=True, editable=False)
+    # last_updated = models.DateTimeField(auto_now=True, editable=False)
 
     class Meta:
         pass
