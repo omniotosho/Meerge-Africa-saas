@@ -1,8 +1,9 @@
+from cities_light.models import City
 from django import forms
 from inventory.models import Category
 from inventory.models import Supplier
 from inventory.models import Item
-from world.models import City
+
 from inventory.models import Supplier
 from . import models
 

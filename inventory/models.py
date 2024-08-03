@@ -1,5 +1,11 @@
+import uuid
+
+from cities_light.models import City
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.urls import reverse
+
+User = get_user_model()
 
 
 class Category(models.Model):
@@ -98,7 +104,8 @@ class Stock(models.Model):
 class Supplier(models.Model):
 
     # Relationships
-    city = models.ManyToManyField("world.City")
+    # city = models.ManyToManyField("world.City")
+    city = models.ManyToManyField(City)  # , on_delete=models.SET_NULL, null=True, blank=True
 
     # Fields
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -132,8 +139,8 @@ class SupplyManager(User):
     supplier = models.ForeignKey("inventory.Supplier", on_delete=models.CASCADE)
 
     # Fields
-    last_updated = models.DateTimeField(auto_now=True, editable=False)
-    created = models.DateTimeField(auto_now_add=True, editable=False)
+    # last_updated = models.DateTimeField(auto_now=True, editable=False)
+    # created = models.DateTimeField(auto_now_add=True, editable=False)
 
     class Meta:
         pass
